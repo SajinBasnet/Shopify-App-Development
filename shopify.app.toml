@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "59f193c497d408c784353edbf898f215"
+name = "hr-task"
+handle = "hr-task"
+application_url = "https://pursue-agrees-evolution-considerable.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-9c0dfec8.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://pursue-agrees-evolution-considerable.trycloudflare.com/auth/callback",
+  "https://pursue-agrees-evolution-considerable.trycloudflare.com/auth/shopify/callback",
+  "https://pursue-agrees-evolution-considerable.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
